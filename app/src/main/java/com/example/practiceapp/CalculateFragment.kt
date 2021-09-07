@@ -141,8 +141,6 @@ class CalculateFragment : Fragment(), View.OnClickListener {
                 binding.textView.text = secondCount.toString()
                 firstCount = binding.textView.text.toString()
             }
-
         }
     }
-
 }
