@@ -8,9 +8,9 @@ import androidx.fragment.app.Fragment
 import com.example.practiceapp.databinding.FragmentCalculateBinding
 
 class CalculateFragment : Fragment(), View.OnClickListener {
-    private var num = ""
+    private var num = StringBuilder()
     private var firstCount = ""
-    private var secondCount = 0
+    private var finalCount = 0
     private var operand: Char = '\u0000'
     private var _binding: FragmentCalculateBinding? = null
     private val binding: FragmentCalculateBinding
@@ -26,9 +26,13 @@ class CalculateFragment : Fragment(), View.OnClickListener {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentCalculateBinding.inflate(layoutInflater, container, false)
+    ): View {
+        _binding = FragmentCalculateBinding.inflate(inflater, container, false)
         initButton()
+        if (savedInstanceState != null) {
+            binding.textView.text = savedInstanceState.get("CALC").toString()
+        }
+
         return binding.root
     }
 
@@ -56,90 +60,85 @@ class CalculateFragment : Fragment(), View.OnClickListener {
         _binding = null
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString("CALC", binding.textView.text.toString())
+    }
+
+
     override fun onClick(v: View?) {
         when (v) {
             binding.one -> {
-                num += "1"
-                binding.textView.text = num
+                binding.textView.text = num.append(1)
             }
             binding.two -> {
-                num += "2"
-                binding.textView.text = num
+                binding.textView.text = num.append(2)
             }
             binding.three -> {
-                num += "3"
-                binding.textView.text = num
+                binding.textView.text = num.append(3)
             }
             binding.four -> {
-                num += "4"
-                binding.textView.text = num
+                binding.textView.text = num.append(4)
             }
             binding.five -> {
-                num += "5"
-                binding.textView.text = num
+                binding.textView.text = num.append(5)
             }
             binding.six -> {
-                num += "6"
-                binding.textView.text = num
+                binding.textView.text = num.append(6)
             }
             binding.seven -> {
-                num += "7"
-                binding.textView.text = num
+                binding.textView.text = num.append(7)
             }
             binding.eight -> {
-                num += "8"
-                binding.textView.text = num
+                binding.textView.text = num.append(8)
             }
             binding.nine -> {
-                num += "9"
-                binding.textView.text = num
+                binding.textView.text = num.append(9)
             }
             binding.zero -> {
-                if (num == "")
-                    binding.textView.text = num
+                if (num.isEmpty())
+                    binding.textView.text = ""
                 else {
-                    num += "0"
-                    binding.textView.text = num
+                    binding.textView.text = num.append(0)
                 }
             }
             binding.delete -> {
-                num = ""
+                num.setLength(0)
                 binding.textView.text = num
             }
             binding.plus -> {
                 firstCount = binding.textView.text.toString()
-                num = ""
+                num.setLength(0)
                 operand = '+'
                 binding.textView.text = num
             }
             binding.minus -> {
                 firstCount = binding.textView.text.toString()
-                num = ""
+                num.setLength(0)
                 operand = '-'
                 binding.textView.text = num
             }
             binding.divide -> {
                 firstCount = binding.textView.text.toString()
-                num = ""
+                num.setLength(0)
                 operand = '/'
                 binding.textView.text = num
             }
             binding.multiply -> {
                 firstCount = binding.textView.text.toString()
-                num = ""
+                num.setLength(0)
                 operand = '*'
                 binding.textView.text = num
             }
             binding.equal -> {
-                secondCount = when (operand) {
-                    '+' -> firstCount.toInt() + num.toInt()
-                    '-' -> firstCount.toInt() - num.toInt()
-                    '/' -> firstCount.toInt() / num.toInt()
-                    '*' -> firstCount.toInt() * num.toInt()
+                finalCount = when (operand) {
+                    '+' -> firstCount.toInt() + Integer.parseInt(num.toString())
+                    '-' -> firstCount.toInt() - Integer.parseInt(num.toString())
+                    '/' -> firstCount.toInt() / Integer.parseInt(num.toString())
+                    '*' -> firstCount.toInt() * Integer.parseInt(num.toString())
                     else -> 0
                 }
-                binding.textView.text = secondCount.toString()
-                firstCount = binding.textView.text.toString()
+                binding.textView.text = finalCount.toString()
             }
         }
     }

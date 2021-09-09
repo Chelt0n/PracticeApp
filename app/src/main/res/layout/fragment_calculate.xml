@@ -8,6 +8,12 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        android:textSize="@dimen/textViewSize" />
+
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/textView"
