@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:text="Theme:"
+        android:text="@string/theme"
         android:textSize="20sp"/>
 
     <LinearLayout
@@ -30,10 +30,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="50dp"
-            android:text="Light"
+            android:text="@string/light"
             android:textSize="30sp" />
 
         <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_theme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
@@ -41,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
-            android:text="Dark"
+            android:text="@string/dark"
             android:textSize="30sp" />
 
     </LinearLayout>
@@ -92,19 +93,23 @@
 
         <RadioGroup
             android:layout_width="wrap_content"
+            android:id="@+id/radio_group"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/radio1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="55dp" />
 
             <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/radio2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/radio3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="65dp" />
@@ -112,6 +117,7 @@
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/save_settings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

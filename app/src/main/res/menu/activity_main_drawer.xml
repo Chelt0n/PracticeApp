@@ -4,13 +4,16 @@
     tools:showIn="navigation_view">
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_general"
+            android:title="@string/general" />
+        <item
             android:id="@+id/nav_calculate"
-            android:title="Calculate" />
+            android:title="@string/calculate" />
         <item
             android:id="@+id/nav_settings"
-            android:title="Settings" />
+            android:title="@string/action_settings" />
         <item
             android:id="@+id/nav_note"
-            android:title="Note" />
+            android:title="@string/note" />
     </group>
 </menu>

@@ -19,8 +19,14 @@
     </style>
     <style name="Theme.PracticeApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="Theme.PracticeApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-    <style name="whiteTheme" parent="Theme.Design.Light">
+    <style name="cursive" parent="Theme.PracticeApp">
         <item name="fontFamily">cursive</item>
-        <item name="android:textSize">20sp</item>
     </style>
+    <style name="sans_serif" parent="Theme.PracticeApp">
+        <item name="fontFamily">sans-serif-thin</item>
+    </style>
+    <style name="condensed" parent="Theme.PracticeApp">
+        <item name="fontFamily">sans-serif-condensed-medium</item>
+    </style>
+
 </resources>

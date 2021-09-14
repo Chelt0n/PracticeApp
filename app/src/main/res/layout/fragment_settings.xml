@@ -13,13 +13,13 @@
         android:textSize="40sp" />
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
         android:text="Theme:"
-        android:textSize="20sp"
-        android:id="@+id/text1"/>
+        android:textSize="20sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -35,9 +35,9 @@
             android:textSize="30sp" />
 
         <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_theme"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/switch_theme" />
+            android:layout_height="wrap_content" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
@@ -47,13 +47,14 @@
             android:textSize="30sp" />
 
     </LinearLayout>
+
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
         android:text="Cursive:"
-        android:textSize="20sp"/>
+        android:textSize="20sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -64,20 +65,22 @@
 
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/t1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="40dp"
-            android:text="ONE"
+            android:text="Cursive"
             android:textSize="30sp" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/t2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:text="TWO"
             android:textSize="30sp" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/t3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
@@ -94,19 +97,23 @@
 
         <RadioGroup
             android:layout_width="wrap_content"
+            android:id="@+id/radio_group"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/radio1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="55dp" />
 
             <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/radio2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/radio3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="65dp" />
@@ -114,11 +121,12 @@
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/save_settings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
-        android:text="Save Settings"/>
+        android:text="Save Settings" />
 
 
 </LinearLayout>

@@ -32,4 +32,10 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="general">General</string>
+    <string name="calculate">Calculate</string>
+    <string name="note">Note</string>
+    <string name="theme">Theme:</string>
+    <string name="light">Light</string>
+    <string name="dark">Dark</string>
 </resources>

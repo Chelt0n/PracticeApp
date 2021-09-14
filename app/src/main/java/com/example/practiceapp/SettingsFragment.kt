@@ -1,35 +1,23 @@
 package com.example.practiceapp
 
-import android.app.Activity
+
 import android.content.Context
 import android.content.SharedPreferences
+import android.graphics.Typeface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CompoundButton
-import androidx.core.app.ActivityCompat.recreate
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
+
 import com.example.practiceapp.databinding.FragmentSettingsBinding
-import android.os.Build
-import android.content.Intent.getIntent
-
-import android.content.Intent
 
 
+class SettingsFragment : Fragment() {
+    private lateinit var sharedPref: SharedPref
+    private var binding: FragmentSettingsBinding? = null
 
-
-
-
-
-class SettingsFragment : Fragment(), CompoundButton.OnCheckedChangeListener {
-    private lateinit var sharedPreferences: SharedPreferences
-    private var _binding: FragmentSettingsBinding? = null
-    private val binding: FragmentSettingsBinding
-        get() {
-            return _binding!!
-        }
 
     companion object {
         fun newInstance() = SettingsFragment()
@@ -39,47 +27,41 @@ class SettingsFragment : Fragment(), CompoundButton.OnCheckedChangeListener {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentSettingsBinding.inflate(inflater, container, false)
-        binding.switchTheme?.setOnCheckedChangeListener(this)
-        binding.switchTheme?.isChecked = getSharedPreference()
-        return binding.root
+        savedInstanceState: Bundle?,
+    ): View? {
+        sharedPref = SharedPref(requireActivity().getSharedPreferences(SharedPref.SETTINGS_SP,
+            Context.MODE_PRIVATE))
+        binding = FragmentSettingsBinding.inflate(inflater, container, false)
+        binding?.switchTheme?.isChecked = sharedPref.getThemeMode() == ThemeModes.NIGHT
+        binding?.saveSettings?.setOnClickListener {
+            if (binding?.switchTheme?.isChecked == true) {
+                sharedPref.setThemeMode(ThemeModes.NIGHT)
+            } else {
+                sharedPref.setThemeMode(ThemeModes.DAY)
+            }
+            when (binding?.radioGroup?.checkedRadioButtonId) {
+                R.id.radio1 -> sharedPref.setFontType(FontTypes.CURSIVE)
+                R.id.radio2 -> sharedPref.setFontType(FontTypes.SANS_SERIF_THIN)
+                R.id.radio3 -> sharedPref.setFontType(FontTypes.CONDENSED)
+            }
+            (requireActivity() as MainActivity).setMode()
+            (requireActivity() as MainActivity).setFragment(newInstance())
+
+
+        }
+        when (sharedPref.getFontType()) {
+            FontTypes.CURSIVE -> binding?.radioGroup?.check(R.id.radio1)
+            FontTypes.SANS_SERIF_THIN -> binding?.radioGroup?.check(R.id.radio2)
+            FontTypes.CONDENSED -> binding?.radioGroup?.check(R.id.radio3)
+        }
+
+
+        return binding?.root
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        _binding = null
-    }
-
-    override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
-        if (isChecked) {
-            Settings.CHECK = true
-            saveSharedPreference(Settings.CHECK)
-            binding.text1!!.text = "Право"
-
-
-
-        } else {
-            Settings.CHECK = false
-            saveSharedPreference(Settings.CHECK)
-            binding.text1!!.text = "Лево"
-
-        }
-
-    }
-
-    private fun saveSharedPreference(isChecked: Boolean) {
-        sharedPreferences =
-            requireActivity().getSharedPreferences(Settings.SETTINGS_SP, Context.MODE_PRIVATE)
-        sharedPreferences.edit().putBoolean(Settings.KEY_CURRENT_THEME, isChecked).apply()
-
-    }
-
-    private fun getSharedPreference(): Boolean {
-        sharedPreferences =
-            requireActivity().getSharedPreferences(Settings.SETTINGS_SP, Context.MODE_PRIVATE)
-        return sharedPreferences.getBoolean(Settings.KEY_CURRENT_THEME, Settings.CHECK)
+        binding = null
     }
 
 
