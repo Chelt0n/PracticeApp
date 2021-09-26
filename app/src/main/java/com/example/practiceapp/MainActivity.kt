@@ -1,7 +1,6 @@
 package com.example.practiceapp
 
-import android.content.Context
-import android.content.SharedPreferences
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -10,6 +9,12 @@ import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO
 import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES
 import androidx.fragment.app.Fragment
 import com.example.practiceapp.databinding.ActivityMainBinding
+import com.example.practiceapp.calculate.CalculateFragment
+import com.example.practiceapp.note.NoteMainActivity
+import com.example.practiceapp.settings.FontTypes
+import com.example.practiceapp.settings.SettingsFragment
+import com.example.practiceapp.settings.SharedPref
+import com.example.practiceapp.settings.ThemeModes
 
 
 class MainActivity : AppCompatActivity() {
@@ -20,7 +25,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
 
-        sharedPref = SharedPref(getSharedPreferences(SharedPref.SETTINGS_SP, Context.MODE_PRIVATE))
+
+        sharedPref = SharedPref(getSharedPreferences(SharedPref.SETTINGS_SP, MODE_PRIVATE))
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -45,6 +51,11 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.nav_general -> {
                     setFragment(GeneralFragment.newInstance())
+                    true
+                }
+                R.id.nav_note -> {
+                    val intent = Intent(this, NoteMainActivity::class.java)
+                    startActivity(intent)
                     true
                 }
                 else ->

@@ -1,15 +1,14 @@
-package com.example.practiceapp
+package com.example.practiceapp.settings
 
 
 import android.content.Context
-import android.content.SharedPreferences
-import android.graphics.Typeface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CompoundButton
 import androidx.fragment.app.Fragment
+import com.example.practiceapp.MainActivity
+import com.example.practiceapp.R
 
 import com.example.practiceapp.databinding.FragmentSettingsBinding
 
@@ -33,6 +32,7 @@ class SettingsFragment : Fragment() {
             Context.MODE_PRIVATE))
         binding = FragmentSettingsBinding.inflate(inflater, container, false)
         binding?.switchTheme?.isChecked = sharedPref.getThemeMode() == ThemeModes.NIGHT
+
         binding?.saveSettings?.setOnClickListener {
             if (binding?.switchTheme?.isChecked == true) {
                 sharedPref.setThemeMode(ThemeModes.NIGHT)
