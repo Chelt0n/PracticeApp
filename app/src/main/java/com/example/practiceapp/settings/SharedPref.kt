@@ -26,6 +26,7 @@ class SharedPref(private val sharedPreferences: SharedPreferences) {
         const val SETTINGS_SP = "SETTINGS_SP"
         private const val THEME_KEY = "THEME_KEY"
         private const val FONT_KEY = "FONT_KEY"
+
     }
 
 }

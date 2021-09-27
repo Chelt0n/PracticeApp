@@ -23,18 +23,14 @@ class TitleFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
 
-
-
-
         return inflater.inflate(R.layout.fragment_title, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var title:TextView? = view.findViewById(R.id.titleNotes)
         val titleArray = resources.getStringArray(R.array.title)
-        title?.text = "Список заметок"
-        var layout:LinearLayout = view.findViewById(R.id.titleLinear)
+        val notesArray = resources.getStringArray(R.array.notes)
+        val layout: LinearLayout = view.findViewById(R.id.titleLinear)
 
         for (i in titleArray.indices) {
             val name: String = titleArray[i]
@@ -42,25 +38,25 @@ class TitleFragment : Fragment() {
             textView.text = name
             textView.textSize = 30f
             layout.addView(textView)
-            var idNote:Int = i
+            var idNote: Int = i
+            var currentNotes = Notes(titleArray[idNote], notesArray[idNote])
             textView.setOnClickListener {
-                showNote(idNote)
-
+                showNote(currentNotes)
             }
         }
 
     }
 
-    private fun showNote(idNote: Int) {
+    private fun showNote(currentNote: Notes) {
         var layoutId: Int = R.id.frame_note_title
         if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
             layoutId = R.id.frame_notes
         }
-        val notesFragment = NotesFragment(idNote)
+
         requireActivity()
             .supportFragmentManager
             .beginTransaction()
-            .replace(layoutId, notesFragment)
+            .replace(layoutId, NotesFragment.newInstance(currentNote))
             .addToBackStack(NotesFragment::class.java.simpleName).commit()
     }
 

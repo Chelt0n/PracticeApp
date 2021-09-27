@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.example.practiceapp.R
 import com.example.practiceapp.databinding.FragmentNotesBinding
 
-class NotesFragment(private var idNote: Int) : Fragment() {
+class NotesFragment : Fragment() {
 
     private var binding: FragmentNotesBinding? = null
 
@@ -18,11 +18,8 @@ class NotesFragment(private var idNote: Int) : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         binding = FragmentNotesBinding.inflate(inflater, container, false)
-
-//        var notes: TextView? = view?.findViewById(R.id.notes)
-//        notes?.text = notesArray[setNote(id)]
-        val notesArray = resources.getStringArray(R.array.notes)
-        binding?.notes?.setText(notesArray[idNote])
+        binding?.titleNotes?.text =(note.title + ":")
+        binding?.notes?.setText(note.message)
         return binding?.root
     }
 
@@ -30,14 +27,14 @@ class NotesFragment(private var idNote: Int) : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (arguments != null) {
-            requireArguments().getParcelable<Notes>(ARG_NAME)
+            note = requireArguments().getParcelable<Notes>(ARG_NAME)!!
         }
     }
 
     companion object {
         const val ARG_NAME = "nameOfNote"
         fun newInstance(notes: Notes): NotesFragment {
-            val fragment = NotesFragment(0)
+            val fragment = NotesFragment()
             val bundle = Bundle()
             bundle.putParcelable(ARG_NAME, notes)
             fragment.arguments = bundle
