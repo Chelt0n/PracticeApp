@@ -12,25 +12,17 @@
         android:text="@string/action_settings"
         android:textSize="40sp" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:text="@string/theme"
-        android:textSize="20sp"/>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:gravity="center">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="50dp"
-            android:text="@string/light"
+            android:text="Light"
             android:textSize="30sp" />
 
         <androidx.appcompat.widget.SwitchCompat
@@ -42,17 +34,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
-            android:text="@string/dark"
+            android:text="Dark"
             android:textSize="30sp" />
 
     </LinearLayout>
-    <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/save_theme"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:text="Cursive:"
-        android:textSize="20sp"/>
+        android:layout_marginTop="5dp"
+        android:text="Save Theme" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -63,20 +57,22 @@
 
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/t1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="40dp"
-            android:text="ONE"
+            android:text="Cursive"
             android:textSize="30sp" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/t2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:text="TWO"
             android:textSize="30sp" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/t3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
@@ -92,8 +88,8 @@
         android:gravity="center">
 
         <RadioGroup
-            android:layout_width="wrap_content"
             android:id="@+id/radio_group"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
@@ -117,12 +113,12 @@
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/save_settings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/save_cursive"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
         android:layout_gravity="center"
         android:layout_marginTop="5dp"
-        android:text="Save Settings"/>
+        android:text="Save cursive" />
 
 
 </LinearLayout>

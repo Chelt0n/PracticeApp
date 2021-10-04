@@ -14,13 +14,14 @@
         <entry key="..\:/AndroidStudioProjects/PracticeApp/app/src/main/res/layout-land/fragment_note_main.xml" value="0.515850144092219" />
         <entry key="..\:/AndroidStudioProjects/PracticeApp/app/src/main/res/layout-land/fragment_notes.xml" value="0.5427083333333333" />
         <entry key="..\:/AndroidStudioProjects/PracticeApp/app/src/main/res/layout-land/fragment_notes_list.xml" value="0.5427083333333333" />
-        <entry key="..\:/AndroidStudioProjects/PracticeApp/app/src/main/res/layout-land/fragment_settings.xml" value="0.3387387387387387" />
-        <entry key="..\:/AndroidStudioProjects/PracticeApp/app/src/main/res/layout-land/note_main_activity.xml" value="0.5213541666666667" />
+        <entry key="..\:/AndroidStudioProjects/PracticeApp/app/src/main/res/layout-land/fragment_settings.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/PracticeApp/app/src/main/res/layout-land/note_main_activity.xml" value="0.291" />
         <entry key="..\:/AndroidStudioProjects/PracticeApp/app/src/main/res/layout-port/fragment_notes.xml" value="0.3625" />
         <entry key="..\:/AndroidStudioProjects/PracticeApp/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/AndroidStudioProjects/PracticeApp/app/src/main/res/layout/activity_settings.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/PracticeApp/app/src/main/res/layout/app_bar_main.xml" value="0.3625" />
         <entry key="..\:/AndroidStudioProjects/PracticeApp/app/src/main/res/layout/app_bar_settings.xml" value="0.20260416666666667" />
+        <entry key="..\:/AndroidStudioProjects/PracticeApp/app/src/main/res/layout/conteiner_activity.xml" value="0.19010416666666666" />
         <entry key="..\:/AndroidStudioProjects/PracticeApp/app/src/main/res/layout/content_settings.xml" value="0.20260416666666667" />
         <entry key="..\:/AndroidStudioProjects/PracticeApp/app/src/main/res/layout/first_activity.xml" value="0.3625" />
         <entry key="..\:/AndroidStudioProjects/PracticeApp/app/src/main/res/layout/fragment_calculate.xml" value="0.3625" />
@@ -32,13 +33,17 @@
         <entry key="..\:/AndroidStudioProjects/PracticeApp/app/src/main/res/layout/fragment_slideshow.xml" value="0.20260416666666667" />
         <entry key="..\:/AndroidStudioProjects/PracticeApp/app/src/main/res/layout/fragment_title.xml" value="0.3625" />
         <entry key="..\:/AndroidStudioProjects/PracticeApp/app/src/main/res/layout/freagment_calculate.xml" value="0.3625" />
+        <entry key="..\:/AndroidStudioProjects/PracticeApp/app/src/main/res/layout/general_activity.xml" value="0.19010416666666666" />
         <entry key="..\:/AndroidStudioProjects/PracticeApp/app/src/main/res/layout/nav_header_main.xml" value="0.3625" />
         <entry key="..\:/AndroidStudioProjects/PracticeApp/app/src/main/res/layout/nav_header_settings.xml" value="0.20260416666666667" />
+        <entry key="..\:/AndroidStudioProjects/PracticeApp/app/src/main/res/layout/note_activity.xml" value="0.18854166666666666" />
         <entry key="..\:/AndroidStudioProjects/PracticeApp/app/src/main/res/layout/note_main_activity.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidStudioProjects/PracticeApp/app/src/main/res/layout/second_actitvity.xml" value="0.3625" />
         <entry key="..\:/AndroidStudioProjects/PracticeApp/app/src/main/res/menu/activity_main_drawer.xml" value="0.5" />
         <entry key="..\:/AndroidStudioProjects/PracticeApp/app/src/main/res/menu/main.xml" value="0.3625" />
         <entry key="..\:/AndroidStudioProjects/PracticeApp/app/src/main/res/menu/main_drawer.xml" value="0.3625" />
         <entry key="..\:/AndroidStudioProjects/PracticeApp/app/src/main/res/menu/settings.xml" value="0.19895833333333332" />
+        <entry key="..\:/AndroidStudioProjects/PracticeApp/app/src/main/res/menu/toolbar_menu.xml" value="0.18854166666666666" />
         <entry key="..\:/AndroidStudioProjects/PracticeApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.21510416666666668" />
         <entry key="..\:/AndroidStudioProjects/PracticeApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.21875" />
       </map>

@@ -7,9 +7,12 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_NO
 import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES
+import androidx.appcompat.widget.Toolbar
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.example.practiceapp.databinding.ActivityMainBinding
 import com.example.practiceapp.calculate.CalculateFragment
+import com.example.practiceapp.databinding.GeneralActivityBinding
 import com.example.practiceapp.note.NoteMainActivity
 import com.example.practiceapp.settings.FontTypes
 import com.example.practiceapp.settings.SettingsFragment
@@ -20,22 +23,13 @@ import com.example.practiceapp.settings.ThemeModes
 class MainActivity : AppCompatActivity() {
     private lateinit var sharedPref: SharedPref
     private lateinit var binding: ActivityMainBinding
-    lateinit var toggle: ActionBarDrawerToggle
+    private lateinit var mNavDrawer: DrawerLayout;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
-
         sharedPref = SharedPref(getSharedPreferences(SharedPref.SETTINGS_SP, MODE_PRIVATE))
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        toggle = ActionBarDrawerToggle(this,
-            binding.drawerLayout,
-            R.string.navigation_drawer_open,
-            R.string.navigation_drawer_close)
-        binding.drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
+        initToolbarAndDrawer()
 
 
 
@@ -69,6 +63,19 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    private fun initToolbarAndDrawer() {
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        mNavDrawer = binding.drawerLayout
+        var toggle: ActionBarDrawerToggle = ActionBarDrawerToggle(
+            this, mNavDrawer,
+            toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
+        )
+        mNavDrawer.addDrawerListener(toggle)
+        toggle.syncState()
+    }
+
+
     override fun onResume() {
         super.onResume()
         setMode()
@@ -94,6 +101,5 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-
 
 }

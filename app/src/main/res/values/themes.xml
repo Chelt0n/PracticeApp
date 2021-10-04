@@ -17,7 +17,7 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-    <style name="Theme.PracticeApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.PracticeApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark" />
     <style name="Theme.PracticeApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
     <style name="cursive" parent="Theme.PracticeApp">
         <item name="fontFamily">cursive</item>

@@ -49,6 +49,7 @@ class TitleFragment : Fragment() {
 
     private fun showNote(currentNote: Notes) {
         var layoutId: Int = R.id.frame_note_title
+
         if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
             layoutId = R.id.frame_notes
         }
